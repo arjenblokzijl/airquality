@@ -4,6 +4,8 @@ import "../firebase/client";
 import { getDatabase, ref } from "firebase/database";
 import { useList } from "react-firebase-hooks/database";
 
+import Card from "https://framer.com/m/Card-4sci.js@8jR9xBqvFYKTrom9ZS9C";
+
 export default function Home() {
   const db = getDatabase();
   const roomRef = ref(db, "room/voorkamer/current");
@@ -25,16 +27,17 @@ export default function Home() {
             <br />
             Pixelpillow HQ
           </h1>
+
           {error && <strong>Error: {error}</strong>}
-          {loading && <span>Loading...</span>}
-          <h2>Voorkamer</h2>
-          <ul>
-            {!loading &&
-              snapshots &&
-              snapshots.map((tutorial, index) => (
-                <li key={index}>{tutorial.val()}</li>
-              ))}
-          </ul>
+          {!loading && snapshots && (
+            <Card
+              roomName="Voorkamer 2"
+              backgroundColor="rgba(114, 37, 80, 1)"
+              co2={snapshots[0].val()}
+              humidity={snapshots[2].val()}
+              temperature={snapshots[3].val()}
+            />
+          )}
         </main>
       </div>
     </>

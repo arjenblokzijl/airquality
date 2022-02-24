@@ -9,31 +9,35 @@ import Card from "https://framer.com/m/Card-4sci.js@YYSvlikKClLnCjswFqBI";
 const ROOMS = [
   {
     title: "Voorkamer",
-    backgroundColor: "rgba(114, 37, 80, 1)",
-  },
-  {
-    title: "Gameroom",
-    backgroundColor: "#FFD376",
-  },
-  {
-    title: "404",
-    backgroundColor: "#4152d9",
-  },
-  {
-    title: "Kantoortuin voor",
-    backgroundColor: "rgba(114, 37, 80, 1)",
-  },
-  {
-    title: "Kantoortuin achter",
     backgroundColor: "#ff8887",
   },
   {
     title: "Entree",
+    backgroundColor: "#4152d9",
+  },
+  {
+    title: "Kantoortuin voor",
+    backgroundColor: "#4152d9",
+  },
+  {
+    title: "Kantoortuin achter",
+    backgroundColor: "#4152d9",
+  },
+  {
+    title: "Keuken",
     backgroundColor: "rgba(114, 37, 80, 1)",
   },
   {
-    title: "Hal",
+    title: "404",
+    backgroundColor: "#FFD376",
+  },
+  {
+    title: "Gameroom",
     backgroundColor: "#ff8887",
+  },
+  {
+    title: "Van Ittersumstraat",
+    backgroundColor: "rgba(114, 37, 80, 1)",
   },
 ];
 
@@ -96,7 +100,7 @@ export default function Home() {
           {error && <strong>Error: {error}</strong>}
           {!loading && snapshots && (
             <>
-              <div className="grid gap-3">
+              <div className="grid gap-3 cards-list">
                 {ROOMS.map((item, index) => {
                   const co2 =
                     index === 0
@@ -127,7 +131,7 @@ export default function Home() {
                       humidity={hum}
                       temperature={temp}
                       tvoc={tvoc}
-                      co2Value={co2}
+                      co2Value={tvoc}
                       humValue={hum}
                       tempValue={temp}
                       tvocValue={tvoc}

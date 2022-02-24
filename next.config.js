@@ -9,6 +9,9 @@ const nextConfig = {
       "https://jspm.dev/",
     ],
   },
+  images: {
+    domains: ["source.unsplash.com"],
+  },
 };
 
 module.exports = nextConfig;
